@@ -1,0 +1,161 @@
+body {
+    font-family: 'Poppins', sans-serif;
+    background: linear-gradient(180deg, #ffe6eb, #ffd1dc);
+    color: #5a2a2a;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    position: relative;
+}
+
+/* 💕 corazones flotantes */
+.hearts::before, .hearts::after {
+    content: "💗💖💞💘💕";
+    position: absolute;
+    font-size: 1.5rem;
+    animation: float 12s infinite linear;
+    opacity: 0.3;
+}
+
+@keyframes float {
+    0% { transform: translateY(100vh) rotate(0deg); }
+    100% { transform: translateY(-10vh) rotate(360deg); }
+}
+
+/* contenedor */
+.container {
+    width: 90%;
+    max-width: 900px;
+    margin: 0 auto;
+    text-align: center;
+    padding: 2rem 0;
+    position: relative;
+    z-index: 2;
+}
+
+h1 {
+    font-size: 2.5rem;
+    color: #d6336c;
+}
+
+.subtitle {
+    margin-bottom: 2rem;
+    font-style: italic;
+}
+
+/* 💞 línea del tiempo */
+.timeline {
+    position: relative;
+    max-width: 900px;
+    margin: 3rem auto;
+}
+
+.timeline::after {
+    content: "";
+    position: absolute;
+    width: 4px;
+    background-color: #ff7ea8;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+}
+
+/* Momentos */
+.moment {
+    padding: 1rem 2rem;
+    position: relative;
+    background-color: inherit;
+    width: 50%;
+    animation: fadeUp 1s forwards;
+}
+
+.moment img {
+    width: 100%;
+    border-radius: 1rem;
+    margin-top: 0.5rem;
+}
+
+/* alternar lados */
+.moment.left {
+    left: 0;
+    text-align: left;
+}
+
+.moment.right {
+    left: 50%;
+    text-align: left;
+}
+
+/* 💖 puntos */
+.moment::after {
+    content: "💖";
+    position: absolute;
+    width: 20px;
+    height: 20px;
+    top: 15px;
+    right: -10px;
+    background-color: #ff7ea8;
+    border-radius: 50%;
+    z-index: 1;
+    font-size: 1rem;
+    line-height: 1.4rem;
+    text-align: center;
+    color: white;
+}
+
+.moment.right::after {
+    left: -10px;
+}
+
+/* tarjetas */
+.card {
+    background: white;
+    padding: 1rem;
+    border-radius: 1rem;
+    box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+    display: inline-block;
+    width: 80%;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+}
+
+.card h3 {
+    color: #d6336c;
+    margin-bottom: 0.5rem;
+}
+
+/* Animación */
+@keyframes fadeUp {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+/* responsive */
+@media screen and (max-width: 768px) {
+    .timeline::after {
+        left: 31px;
+    }
+
+    .moment {
+        width: 100%;
+        padding-left: 70px;
+        padding-right: 25px;
+    }
+
+    .moment.right {
+        left: 0;
+    }
+
+    .moment::after {
+        left: 15px;
+    }
+
+    .card {
+        width: 90%;
+    }
+}
