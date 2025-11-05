@@ -8,6 +8,7 @@ body {
     position: relative;
 }
 
+
 /* 💕 corazones flotantes */
 .hearts::before, .hearts::after {
     content: "💗💖💞💘💕";
@@ -15,12 +16,30 @@ body {
     font-size: 1.5rem;
     animation: float 12s infinite linear;
     opacity: 0.3;
+
 }
 
 @keyframes float {
     0% { transform: translateY(100vh) rotate(0deg); }
     100% { transform: translateY(-10vh) rotate(360deg); }
 }
+
+.btn-descargar {
+    background-color: #ff6b9d;
+    color: white;
+    border: none;
+    padding: 8px 16px;
+    border-radius: 10px;
+    cursor: pointer;
+    margin-top: 10px;
+    font-size: 15px;
+    transition: background 0.3s;
+}
+
+.btn-descargar:hover {
+    background-color: #ff4f89;
+}
+
 
 /* contenedor */
 .container {
@@ -118,6 +137,7 @@ h1 {
     display: inline-block;
     width: 80%;
     transition: transform 0.3s ease, box-shadow 0.3s ease;
+
 }
 
 .card:hover {
@@ -159,4 +179,6 @@ h1 {
     .card {
         width: 90%;
     }
+
+
 }
